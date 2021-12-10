@@ -82,7 +82,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only four consume traces will be finished at this point
-    assertTraces(9) {
+    assertTraces(9, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -99,7 +99,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the last consume trace will also be finished
-    assertTraces(10) {
+    assertTraces(10, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -152,7 +152,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only three consume traces will be finished at this point
-    assertTraces(6) {
+    assertTraces(6, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -171,7 +171,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the other consume traces will be finished
-    assertTraces(7) {
+    assertTraces(7, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -230,7 +230,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only two consume traces will be finished at this point
-    assertTraces(6) {
+    assertTraces(6, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -248,7 +248,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the other consume traces will be finished
-    assertTraces(7) {
+    assertTraces(7, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -309,7 +309,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only four consume traces will be finished at this point
-    assertTraces(9) {
+    assertTraces(9, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -337,7 +337,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the last consume trace will also be finished
-    assertTraces(10) {
+    assertTraces(10, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -405,7 +405,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only three consume traces will be finished at this point
-    assertTraces(6) {
+    assertTraces(6, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -424,7 +424,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the other consume traces will be finished
-    assertTraces(7) {
+    assertTraces(7, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -485,7 +485,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
     receivedMessage4.text == messageText4
     receivedMessage5.text == messageText5
     // only two consume traces will be finished at this point
-    assertTraces(6) {
+    assertTraces(6, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
@@ -503,7 +503,7 @@ class TimeInQueueForkedTest extends AgentTestRunner {
 
     then:
     // now the other consume traces will be finished
-    assertTraces(7) {
+    assertTraces(7, SORT_TRACES_BY_ID) {
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)
       producerTrace(it, jmsResourceName)

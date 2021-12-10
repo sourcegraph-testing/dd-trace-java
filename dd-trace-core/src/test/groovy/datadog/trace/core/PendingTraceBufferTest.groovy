@@ -77,6 +77,7 @@ class PendingTraceBufferTest extends DDSpecification {
     trace.pendingReferenceCount == 1
     1 * bufferSpy.enqueue(trace)
     _ * tracer.getPartialFlushMinSpans() >> 10
+    1 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(span)
     0 * _
 
@@ -108,6 +109,7 @@ class PendingTraceBufferTest extends DDSpecification {
     trace.pendingReferenceCount == 1
     1 * bufferSpy.enqueue(trace)
     _ * tracer.getPartialFlushMinSpans() >> 10
+    1 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(parent)
     0 * _
 
@@ -120,6 +122,7 @@ class PendingTraceBufferTest extends DDSpecification {
     1 * tracer.write({ it.size() == 2 })
     1 * tracer.writeTimer() >> Monitoring.DISABLED.newTimer("")
     _ * tracer.getPartialFlushMinSpans() >> 10
+    1 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(child)
     0 * _
   }
@@ -139,6 +142,7 @@ class PendingTraceBufferTest extends DDSpecification {
     _ * tracer.getPartialFlushMinSpans() >> 10
     _ * tracer.mapServiceName(_)
     _ * tracer.onStart(_)
+    _ * tracer.getTimeWithNanoTicks(_)
     _ * tracer.onFinish(_)
     0 * _
 
@@ -152,6 +156,7 @@ class PendingTraceBufferTest extends DDSpecification {
     _ * tracer.getPartialFlushMinSpans() >> 10
     _ * tracer.mapServiceName(_)
     1 * tracer.onStart(_)
+    2 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(_)
     0 * _
   }
@@ -176,6 +181,7 @@ class PendingTraceBufferTest extends DDSpecification {
     !trace.rootSpanWritten
     1 * bufferSpy.enqueue(trace)
     _ * tracer.getPartialFlushMinSpans() >> 10
+    1 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(parent)
     0 * _
 
@@ -227,6 +233,7 @@ class PendingTraceBufferTest extends DDSpecification {
       parentLatch.countDown()
     }
     _ * tracer.getPartialFlushMinSpans() >> 10
+    1 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(parent)
     0 * _
 
@@ -247,6 +254,7 @@ class PendingTraceBufferTest extends DDSpecification {
     }
     _ * tracer.mapServiceName(_)
     1 * tracer.onStart(_)
+    2 * tracer.getTimeWithNanoTicks(_)
     1 * tracer.onFinish(_)
     0 * _
   }
