@@ -59,5 +59,8 @@ public final class TracerConfig {
 
   public static final String ENABLE_TRACE_AGENT_V05 = "trace.agent.v0.5.enabled";
 
+  public static final String CLOCK_CHECK_PERIOD = "trace.clock.check.period";
+  public static final String CLOCK_SKEW_LIMIT = "trace.clock.skew.limit";
+
   private TracerConfig() {}
 }
